@@ -14,8 +14,8 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 //	float width = 300;
 //	float height = 300;
 	
-	float width = 240;
-	float height = 240;
+	float width = getWidth();
+	float height = getHeight();
 	
 	//
 	float max = 0f;
@@ -115,7 +115,6 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 						angle = angle + (3 * direction);
 						notifyListener(direction, angle);
 					}
-					
 				}
 				return true;
 			}
@@ -139,7 +138,7 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 
 	protected void onDraw(Canvas c) {
 		// c.rotate(angle, 150, 150);
-		c.rotate(angle, 150, 150);
+		c.rotate(angle, getWidth()/2.0f, getHeight()/2.0f);
 		super.onDraw(c);
 	}
 
