@@ -42,26 +42,26 @@ public class ControlActivity extends AppCompatActivity {
 			@Override
 			public void onKnobChanged(float arg, float value) {
 				// TODO Auto-generated method stub
-//				if(value>=-30.0&&value<30.0){
-//					//구역1
-//					txtView.setText("Delighted");
-//				}else if(value>=30.0&&value<90.0){
-//					//구역2
-//					txtView.setText("Happy");
-//				}else if(value>=90.0&&value<150.0){
-//					//구역3
-//					txtView.setText("Nervous");
-//				}else if(value<-30.0&&value>=-90.0){
-//					//구역4
-//					txtView.setText("Love");
-//				}else if(value<-90.0&&value>=-150.0){
-//					//구역5
-//					txtView.setText("Serious");
-//				}else if((value<-150.0&&value>=-180.0)||(value<180.0&&value>=150.0)){
-//					//구역5
-//					txtView.setText("Gloomy");
-//				}
-				txtView.setText(String.valueOf(value));
+				if(value>=-30.0&&value<30.0){
+					//구역1
+					txtView.setText("Delighted");
+				}else if(value>=30.0&&value<90.0){
+					//구역2
+					txtView.setText("Happy");
+				}else if(value>=90.0&&value<150.0){
+					//구역3
+					txtView.setText("Nervous");
+				}else if(value<-30.0&&value>=-90.0){
+					//구역4
+					txtView.setText("Love");
+				}else if(value<-90.0&&value>=-150.0){
+					//구역5
+					txtView.setText("Serious");
+				}else if((value<-150.0&&value>=-180.0)||(value<180.0&&value>=150.0)){
+					//구역5
+					txtView.setText("Gloomy");
+				}
+				//txtView.setText(String.valueOf(value));
 
 			}
 		});
