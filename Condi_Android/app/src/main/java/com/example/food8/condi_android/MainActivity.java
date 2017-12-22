@@ -19,7 +19,7 @@ import retrofit2.Retrofit;
 public class MainActivity extends AppCompatActivity {
     Retrofit retrofit;
     ApiService apiService;
-    Button button,btn_yes;
+    Button button,btn_yes,btn_no;
     EditText editText;
 
     @Override
@@ -31,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
         button = (Button)findViewById(R.id.button3);
         editText = (EditText)findViewById(R.id.editText);
         btn_yes = (Button)findViewById(R.id.btn_yes);
+        btn_no = (Button)findViewById(R.id.btn_no);
+
+        btn_no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ControlActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_yes.setOnClickListener(new View.OnClickListener() {
             @Override
