@@ -4,37 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="@drawable/background_main"
+=======
+    android:background="@drawable/back_one"
+>>>>>>> c690569fb3b4b6ffdcbd9ea67b5ac9aa88a1abfe
     tools:context="com.example.food8.condi_android.MainActivity">
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 4b2eb4f3c91712c2d8d433a6e3333f0b22b57fae
     <LinearLayout
         android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="200dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/btn_yes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="네" />
+            android:background="@drawable/yes_one" />
 
         <Button
             android:id="@+id/btn_no"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="아니오" />
+            android:background="@drawable/no_one" />
 
     </LinearLayout>
 
