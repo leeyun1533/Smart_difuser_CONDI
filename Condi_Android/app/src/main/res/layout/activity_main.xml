@@ -7,6 +7,11 @@
     android:background="@drawable/back_one"
     tools:context="com.example.food8.condi_android.MainActivity">
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4b2eb4f3c91712c2d8d433a6e3333f0b22b57fae
     <LinearLayout
         android:layout_width="200dp"
         android:layout_height="35dp"
