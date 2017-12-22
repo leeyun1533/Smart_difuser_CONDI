@@ -5,19 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
-=======
-import android.widget.EditText;
-import android.widget.ImageButton;
-
-import java.io.IOException;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
->>>>>>> 88d5ee62b0da3b4a881876631280e24d45540d6f
 
 public class MainActivity extends AppCompatActivity {
     Button btn_yes,btn_no;

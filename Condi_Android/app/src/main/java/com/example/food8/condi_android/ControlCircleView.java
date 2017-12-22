@@ -3,6 +3,7 @@ package com.example.food8.condi_android;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -11,12 +12,6 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 	private float angle = 0f;
 	private float theta_old = 0f;
 
-//	float width = 300;
-//	float height = 300;
-	
-	float width = getWidth();
-	float height = getHeight();
-	
 	//
 	float max = 0f;
 	float min = 0f;
@@ -25,7 +20,7 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 
 	public interface RotaryKnobListener {
 		// public void onKnobChanged(int arg);
-		public void onKnobChanged(int arg, float value);
+		public void onKnobChanged(float arg, float value);
 	}
 	
 	//
@@ -54,8 +49,8 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 	}
 
 	private float getTheta(float x, float y) {
-		float sx = x - (width / 2.0f);
-		float sy = y - (height / 2.0f);
+		float sx = x - (this.getWidth() / 2.0f);
+		float sy = y - (this.getHeight() / 2.0f);
 
 		float length = (float) Math.sqrt(sx * sx + sy * sy);
 		float nx = sx / length;
@@ -65,7 +60,7 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 		final float rad2deg = (float) (180.0 / Math.PI);
 		float theta2 = theta * rad2deg;
 
-		return (theta2 < 0) ? theta2 + 360.0f : theta2;
+		return theta2;
 	}
 
 	public void initialize() {
@@ -77,8 +72,8 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 				// TODO Auto-generated method stub
 				int action = event.getAction();
 				int actionCode = action & MotionEvent.ACTION_MASK;
-				
-				if (actionCode == MotionEvent.ACTION_POINTER_DOWN) {
+
+				if ( actionCode == MotionEvent.ACTION_DOWN) {
 					float x = event.getX(0);
 					float y = event.getY(0);
 					theta_old = getTheta(x, y);
@@ -89,32 +84,45 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 					float y = event.getY(0);
 
 					float theta = getTheta(x, y);
-					float delta_theta = theta - theta_old;
-			
+					float delta_theta ;
+					if(180 < theta - theta_old){
+						delta_theta = (theta - theta_old) - 360;
+					}else if(-180 < theta - theta_old){
+						delta_theta = (theta - theta_old) + 360;
+					}else {
+						delta_theta = (theta - theta_old);
+					}
+					Log.v("x + y : ",String.valueOf(x)+"    \n"+String.valueOf(y)+"    \n"+String.valueOf(v.getWidth())+"    \n"+String.valueOf(v.getHeight()));
 					theta_old = theta;
 
-					int direction = (delta_theta > 0) ? 1 : -1;
+					float direction = delta_theta;
 					
 //					angle += 3 * direction;
 					//  angle�̶�  notifyListener()������ 
 					// �ޱ��ϰ� �̹��� �����̼����� �簻�� �Ѵ�
 //					angle = angle + ( 3 * direction );
 //					notifyListener(direction);
-					
-					if ( angle > max ) {
-						if( direction == -1 ) {
-							angle = angle + (3 * direction);
-							notifyListener(direction, angle);
-						}
-					} else if (angle < min) {
-						if( direction == 1 ) {
-							angle = angle + (3 * direction);
-							notifyListener(direction, angle);
-						}
-					} else {
-						angle = angle + (3 * direction);
-						notifyListener(direction, angle);
+					angle = angle + (direction);
+					Log.v("dir",direction+"");
+//					angle = angle > 180 ? (angle - 360) :angle ;
+//					angle = angle < -180 ?(angle + 360) :angle ;
+					if(angle > 180f){
+
+						Log.v("AngleTrue",String.valueOf(angle));
+						angle -= 360;
+						Log.v("AngleTrue",String.valueOf(angle));
 					}
+					else if(angle < -180f){
+						angle += 360;
+					}
+					if(angle > 180f){
+
+						Log.v("AngleTrue",String.valueOf(angle));
+						angle -= 360;
+						Log.v("AngleTrue",String.valueOf(angle));
+					}
+					notifyListener(direction, angle);
+					Log.v("Angle",String.valueOf(angle));
 				}
 				return true;
 			}
@@ -130,7 +138,7 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 	*/
 	
 	//
-	private void notifyListener(int arg, float value) {
+	private void notifyListener(float arg, float value) {
 		if (null != listener)
 			//
 			listener.onKnobChanged(arg, value);

@@ -33,7 +33,6 @@ public class ControlActivity extends AppCompatActivity {
 		apiService = retrofit.create(ApiService.class);
 
 		ControlCircleView jogView = (ControlCircleView)findViewById(R.id.jogView);
-
 		//
 		jogView.setKnobMaxMin(180.0f, -180.0f);
 		txtView.setText("기분을 선택하세요");
@@ -41,27 +40,28 @@ public class ControlActivity extends AppCompatActivity {
 		jogView.setKnobListener(new ControlCircleView.RotaryKnobListener() {
 			
 			@Override
-			public void onKnobChanged(int arg, float value) {
+			public void onKnobChanged(float arg, float value) {
 				// TODO Auto-generated method stub
-				if(value>=-30.0&&value<30.0){
-					//구역1
-					txtView.setText("Delighted");
-				}else if(value>=30.0&&value<90.0){
-					//구역2
-					txtView.setText("Happy");
-				}else if(value>=90.0&&value<150.0){
-					//구역3
-					txtView.setText("Nervous");
-				}else if(value<-30.0&&value>=-90.0){
-					//구역4
-					txtView.setText("Love");
-				}else if(value<-90.0&&value>=-150.0){
-					//구역5
-					txtView.setText("Serious");
-				}else if((value<-150.0&&value>=-180.0)||(value<180.0&&value>=150.0)){
-					//구역5
-					txtView.setText("Gloomy");
-				}
+//				if(value>=-30.0&&value<30.0){
+//					//구역1
+//					txtView.setText("Delighted");
+//				}else if(value>=30.0&&value<90.0){
+//					//구역2
+//					txtView.setText("Happy");
+//				}else if(value>=90.0&&value<150.0){
+//					//구역3
+//					txtView.setText("Nervous");
+//				}else if(value<-30.0&&value>=-90.0){
+//					//구역4
+//					txtView.setText("Love");
+//				}else if(value<-90.0&&value>=-150.0){
+//					//구역5
+//					txtView.setText("Serious");
+//				}else if((value<-150.0&&value>=-180.0)||(value<180.0&&value>=150.0)){
+//					//구역5
+//					txtView.setText("Gloomy");
+//				}
+				txtView.setText(String.valueOf(value));
 
 			}
 		});
