@@ -139,7 +139,7 @@ public class ControlCircleView extends android.support.v7.widget.AppCompatImageV
 
 	protected void onDraw(Canvas c) {
 		// c.rotate(angle, 150, 150);
-		c.rotate(angle, 120, 120);
+		c.rotate(angle, 150, 150);
 		super.onDraw(c);
 	}
 
