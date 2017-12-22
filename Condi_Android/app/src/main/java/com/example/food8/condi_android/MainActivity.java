@@ -1,5 +1,6 @@
 package com.example.food8.condi_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,7 +19,7 @@ import retrofit2.Retrofit;
 public class MainActivity extends AppCompatActivity {
     Retrofit retrofit;
     ApiService apiService;
-    Button button;
+    Button button,btn_yes;
     EditText editText;
 
     @Override
@@ -29,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
         apiService = retrofit.create(ApiService.class);
         button = (Button)findViewById(R.id.button3);
         editText = (EditText)findViewById(R.id.editText);
+        btn_yes = (Button)findViewById(R.id.btn_yes);
+
+        btn_yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),SelectActivity.class);
+                startActivity(intent);
+            }
+        });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
