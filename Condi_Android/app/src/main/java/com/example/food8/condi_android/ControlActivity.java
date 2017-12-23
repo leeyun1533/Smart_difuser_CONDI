@@ -74,10 +74,12 @@ public class ControlActivity extends AppCompatActivity {
 				data.enqueue(new Callback<ResponseBody>() {
 					@Override
 					public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-						try {
-							Log.v("Test",response.body().string());
-						} catch (IOException e) {
-							e.printStackTrace();
+						if(response.body()!=null) {
+							try {
+								Log.v("Test", response.body().string());
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
 						}
 					}
 

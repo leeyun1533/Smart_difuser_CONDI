@@ -25,6 +25,9 @@
         <activity android:name=".ControlActivity" />
         <activity android:name=".ContactActivity" />
         <activity android:name=".PlayActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="b9b7327acd1de4757993017c6838c8b88ff3ce80" />
     </application>
 
 </manifest>
