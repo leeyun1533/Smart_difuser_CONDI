@@ -1,6 +1,7 @@
 package com.example.food8.condi_android;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -86,6 +87,8 @@ public class ControlActivity extends AppCompatActivity {
 
 					}
 				});
+				Intent intent = new Intent(getApplicationContext(),PlayActivity.class);
+				startActivity(intent);
 			}
 		});
 		

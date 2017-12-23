@@ -68,6 +68,8 @@ public class ContactActivity extends AppCompatActivity {
 
                     }
                 });
+                Intent intent = new Intent(getApplicationContext(),PlayActivity.class);
+                startActivity(intent);
             }
         });
 
