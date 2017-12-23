@@ -35,16 +35,16 @@ public class ContactActivity extends AppCompatActivity {
         retrofit = new Retrofit.Builder().baseUrl(ApiService.API_URL).build();
         button = (Button)findViewById(R.id.btnget);
         apiService = retrofit.create(ApiService.class);
-        if(array[0]&&!array[1]&&!array[2]){     //1번 참
-            sendData = "delighted";
-        }else if(!array[0]&&array[1]&&!array[2]){   //2번참
+        if(array[0]&&!array[1]&&!array[2]){     //1번 참      happy
             sendData = "happy";
-        }else if(!array[0]&&!array[1]&&array[2]){   //3번 참
-            sendData = "nervous";
-        }else if(array[0]&&array[1]&&!array[2]){    //1,2 참
+        }else if(!array[0]&&array[1]&&!array[2]){   //2번참   gloomy
             sendData = "gloomy";
-        }else if(array[0]&&!array[1]&&array[2]){    //1,3 참
+        }else if(!array[0]&&!array[1]&&array[2]){   //3번 참  serious
             sendData = "serious";
+        }else if(array[0]&&array[1]&&!array[2]){    //1,2 참  nervous
+            sendData = "nervous";
+        }else if(array[0]&&!array[1]&&array[2]){    //1,3 참
+            sendData = "delighted";
         }else if(!array[0]&&array[1]&&array[2]){    //2,3 참
             sendData = "love";
         }

@@ -35,16 +35,16 @@
 
         <ImageView
             android:id="@+id/backView"
-            android:layout_width="360dp"
-            android:layout_height="360dp"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:src="@drawable/knob_back" />
 
         <com.example.food8.condi_android.ControlCircleView
             android:id="@+id/jogView"
-            android:layout_width="360dp"
-            android:layout_height="360dp"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:padding="60dp" />

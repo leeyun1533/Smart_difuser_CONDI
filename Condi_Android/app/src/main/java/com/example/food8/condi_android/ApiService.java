@@ -10,7 +10,7 @@ import retrofit2.http.Query;
  */
 
 public interface ApiService {
-    public static final String API_URL = "http://192.9.11.21/";
+    public static final String API_URL = "http://192.9.20.185/";
 
     @GET("index.php")
     Call<ResponseBody> getData(@Query("data") String data);

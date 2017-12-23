@@ -14,40 +14,39 @@
         android:layout_marginBottom="30dp"
         android:orientation="vertical"
         android:id="@+id/linearLayout">
+
         <TextView
             android:layout_width="300dp"
-            android:layout_marginLeft="80dp"
-            android:layout_height="50dp"
-            android:textSize="16dp"
+            android:layout_height="60dp"
             android:background="@drawable/talk"
             android:gravity="center"
+            android:text="오늘 좋은 일이 있으셨나요??"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:text="오늘 좋은 일이 있으셨나요??"/>
+            android:textSize="16dp" />
         <RadioGroup
             android:id="@+id/answer_1"
             android:orientation="horizontal"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="100dp"
             android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="대답 : "/>
+\
+
             <RadioButton
                 android:id="@+id/radio1_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="예"/>
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:background="@drawable/yes_one"
+                android:button="@null"
+                android:layout_marginRight="10dp"
+                android:textSize="16dp" />
             <RadioButton
                 android:id="@+id/radio1_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="아니오"/>
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:background="@drawable/no_one"
+                android:button="@null"/>
         </RadioGroup>
     </LinearLayout>
 
@@ -62,7 +61,6 @@
 
         <TextView
             android:layout_width="300dp"
-            android:layout_marginLeft="80dp"
             android:layout_height="50dp"
             android:textSize="16dp"
             android:gravity="center"
@@ -75,28 +73,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="100dp"
             android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="대답 : " />
 
             <RadioButton
                 android:id="@+id/radio2_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="예" />
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:background="@drawable/yes_one"
+                android:layout_marginRight="10dp"
+                android:button="@null"
+                android:textSize="16dp"/>
 
             <RadioButton
                 android:id="@+id/radio2_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="아니오" />
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:background="@drawable/no_one"
+                android:button="@null"
+                android:textSize="16dp" />
         </RadioGroup>
     </LinearLayout>
 
@@ -111,7 +106,6 @@
 
         <TextView
             android:layout_width="300dp"
-            android:layout_marginLeft="80dp"
             android:layout_height="50dp"
             android:textSize="16dp"
             android:gravity="center"
@@ -124,36 +118,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="100dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="대답 : " />
 
             <RadioButton
                 android:id="@+id/radio3_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="예" />
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:background="@drawable/yes_one"
+                android:layout_marginRight="10dp"
+                android:button="@null"
+                android:textSize="16dp" />
 
             <RadioButton
                 android:id="@+id/radio3_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="아니오" />
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:background="@drawable/no_one"
+                android:button="@null"
+                android:textSize="16dp"/>
         </RadioGroup>
     </LinearLayout>
-    <Button
-        android:id="@+id/submitBtn"
-        android:layout_width="wrap_content"
-        android:background="@drawable/next"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="30dp"/>
 </LinearLayout>

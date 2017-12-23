@@ -63,7 +63,6 @@ public class ControlActivity extends AppCompatActivity {
 					txtView.setText("Gloomy");
 				}
 				//txtView.setText(String.valueOf(value));
-
 			}
 		});
 
@@ -89,6 +88,7 @@ public class ControlActivity extends AppCompatActivity {
 				});
 				Intent intent = new Intent(getApplicationContext(),PlayActivity.class);
 				startActivity(intent);
+				overridePendingTransition(R.anim.anim_in,R.anim.anim_out);
 			}
 		});
 		
